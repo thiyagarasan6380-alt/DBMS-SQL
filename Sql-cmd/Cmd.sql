@@ -1,8 +1,6 @@
-# 📘 SQL Syntax Cheat Sheet
+# 📘 SQL Syntax Reference
 
-## 🏗️ DDL (Data Definition Language)
-
-### CREATE TABLE
+## CREATE TABLE
 ```sql
 CREATE TABLE table_name (
     column1 datatype,
@@ -11,118 +9,65 @@ CREATE TABLE table_name (
 );
 ```
 
-Example:
-```sql
-CREATE TABLE EMP(
-    EMPNO NUMBER(6),
-    ENAME VARCHAR2(20)
-);
-```
+## ALTER TABLE
 
----
-
-### ALTER TABLE
-
-#### Add a Column
+### Add Column
 ```sql
 ALTER TABLE table_name
 ADD column_name datatype;
 ```
 
-#### Modify a Column
+### Modify Column
 ```sql
 ALTER TABLE table_name
 MODIFY column_name datatype;
 ```
 
-#### Drop a Column
+### Drop Column
 ```sql
 ALTER TABLE table_name
 DROP COLUMN column_name;
 ```
 
----
-
-### DROP TABLE
+## DROP TABLE
 ```sql
 DROP TABLE table_name;
 ```
 
----
-
-### TRUNCATE TABLE
+## TRUNCATE TABLE
 ```sql
 TRUNCATE TABLE table_name;
 ```
 
----
-
-### DESC
+## DESC
 ```sql
 DESC table_name;
 ```
 
 ---
 
-# ✏️ DML (Data Manipulation Language)
+# DML Commands
 
-### INSERT
+## INSERT
 ```sql
 INSERT INTO table_name
 VALUES(value1, value2, value3, ...);
 ```
 
-Insert into specific columns:
-```sql
-INSERT INTO table_name(column1, column2)
-VALUES(value1, value2);
-```
-
----
-
-### UPDATE
-
-Update all rows:
-```sql
-UPDATE table_name
-SET column_name = value;
-```
-
-Update selected rows:
+## UPDATE
 ```sql
 UPDATE table_name
 SET column_name = value
 WHERE condition;
 ```
 
----
-
-### DELETE
-
-Delete selected rows:
+## DELETE
 ```sql
 DELETE FROM table_name
 WHERE condition;
 ```
 
-Delete all rows:
-```sql
-DELETE FROM table_name;
-```
-
----
-
-# 🔍 Query Commands
-
-### SELECT
-
-Display all columns:
-```sql
-SELECT *
-FROM table_name;
-```
-
-Display selected columns:
+## SELECT
 ```sql
 SELECT column1, column2
 FROM table_name;
@@ -130,146 +75,107 @@ FROM table_name;
 
 ---
 
-### DISTINCT
-```sql
-SELECT DISTINCT column_name
-FROM table_name;
-```
+# SQL Clauses
 
----
-
-### WHERE
+## WHERE
 ```sql
 SELECT *
 FROM table_name
 WHERE condition;
 ```
 
-Comparison Operators:
-```text
-=
->
-<
->=
-<=
-<>
-```
-
----
-
-### BETWEEN
+## DISTINCT
 ```sql
-SELECT *
-FROM table_name
-WHERE column_name BETWEEN value1 AND value2;
+SELECT DISTINCT column_name
+FROM table_name;
 ```
 
-Equivalent:
-```sql
-WHERE column_name >= value1
-AND column_name <= value2;
-```
-
----
-
-### LIKE
-
-Starts with:
-```sql
-WHERE column_name LIKE 'A%';
-```
-
-Ends with:
-```sql
-WHERE column_name LIKE '%A';
-```
-
-Contains:
-```sql
-WHERE column_name LIKE '%ABC%';
-```
-
-Single character:
-```sql
-WHERE column_name LIKE '_A%';
-```
-
----
-
-### ORDER BY
-
-Ascending:
+## ORDER BY (Ascending)
 ```sql
 SELECT *
 FROM table_name
 ORDER BY column_name;
 ```
 
-Descending:
+## ORDER BY (Descending)
 ```sql
 SELECT *
 FROM table_name
 ORDER BY column_name DESC;
 ```
 
----
-
-### AS (Alias)
-
-Column Alias:
+## BETWEEN
 ```sql
-SELECT salary AS MonthlySalary
-FROM Employee;
+SELECT *
+FROM table_name
+WHERE column_name BETWEEN value1 AND value2;
 ```
 
-Table Alias:
+## LIKE
+
+Starts with
 ```sql
-SELECT E.name
-FROM Employee AS E;
+SELECT *
+FROM table_name
+WHERE column_name LIKE 'A%';
+```
+
+Ends with
+```sql
+SELECT *
+FROM table_name
+WHERE column_name LIKE '%A';
+```
+
+Contains
+```sql
+SELECT *
+FROM table_name
+WHERE column_name LIKE '%ABC%';
+```
+
+Single Character
+```sql
+SELECT *
+FROM table_name
+WHERE column_name LIKE '_A%';
+```
+
+## AS (Alias)
+```sql
+SELECT column_name AS alias_name
+FROM table_name;
 ```
 
 ---
 
-# 📊 Aggregate Functions
+# Aggregate Functions
 
-### COUNT
+## COUNT
 ```sql
 SELECT COUNT(*)
 FROM table_name;
 ```
 
-```sql
-SELECT COUNT(column_name)
-FROM table_name;
-```
-
----
-
-### SUM
+## SUM
 ```sql
 SELECT SUM(column_name)
 FROM table_name;
 ```
 
----
-
-### AVG
+## AVG
 ```sql
 SELECT AVG(column_name)
 FROM table_name;
 ```
 
----
-
-### MAX
+## MAX
 ```sql
 SELECT MAX(column_name)
 FROM table_name;
 ```
 
----
-
-### MIN
+## MIN
 ```sql
 SELECT MIN(column_name)
 FROM table_name;
@@ -277,27 +183,16 @@ FROM table_name;
 
 ---
 
-# 📂 GROUP BY
-
-Syntax:
+# GROUP BY
 ```sql
 SELECT column_name, COUNT(*)
 FROM table_name
 GROUP BY column_name;
 ```
 
-Example:
-```sql
-SELECT country, COUNT(*)
-FROM Customers
-GROUP BY country;
-```
-
 ---
 
-# 🎯 HAVING
-
-Syntax:
+# HAVING
 ```sql
 SELECT column_name, COUNT(*)
 FROM table_name
@@ -305,154 +200,109 @@ GROUP BY column_name
 HAVING COUNT(*) > 1;
 ```
 
-Example:
-```sql
-SELECT customer_id, SUM(amount)
-FROM Orders
-GROUP BY customer_id
-HAVING SUM(amount) > 10000;
-```
-
 ---
 
-# 🔗 Set Operations
+# Set Operations
 
-### UNION
+## UNION
 ```sql
 SELECT column_name
 FROM table1
-
 UNION
-
 SELECT column_name
 FROM table2;
 ```
 
----
-
-### UNION ALL
+## UNION ALL
 ```sql
 SELECT column_name
 FROM table1
-
 UNION ALL
-
 SELECT column_name
 FROM table2;
 ```
 
----
-
-### INTERSECT
+## INTERSECT
 ```sql
 SELECT column_name
 FROM table1
-
 INTERSECT
-
 SELECT column_name
 FROM table2;
 ```
 
----
-
-### MINUS (Oracle SQL)
+## MINUS (Oracle SQL)
 ```sql
 SELECT column_name
 FROM table1
-
 MINUS
-
 SELECT column_name
 FROM table2;
 ```
 
 ---
 
-# 🛡️ Constraints
+# SQL Joins
 
-### PRIMARY KEY
+## NATURAL JOIN
 ```sql
-column_name datatype PRIMARY KEY
+SELECT column_name
+FROM table1
+NATURAL JOIN table2;
+```
+
+## INNER JOIN
+```sql
+SELECT column_name
+FROM table1
+JOIN table2
+ON table1.common_column = table2.common_column;
+```
+
+## LEFT OUTER JOIN
+```sql
+SELECT column_name
+FROM table1
+LEFT JOIN table2
+ON table1.common_column = table2.common_column;
+```
+
+## RIGHT OUTER JOIN
+```sql
+SELECT column_name
+FROM table1
+RIGHT JOIN table2
+ON table1.common_column = table2.common_column;
+```
+
+## FULL OUTER JOIN
+```sql
+SELECT column_name
+FROM table1
+FULL OUTER JOIN table2
+ON table1.common_column = table2.common_column;
 ```
 
 ---
 
-### NOT NULL
+# VIEW
+
+## CREATE VIEW
 ```sql
-column_name datatype NOT NULL
+CREATE VIEW view_name AS
+SELECT column_name
+FROM table_name;
 ```
 
 ---
 
-### UNIQUE
-```sql
-column_name datatype UNIQUE
-```
+# SQL Query Execution Order
 
----
-
-### CHECK
-```sql
-column_name datatype CHECK(condition)
-```
-
-Example:
-```sql
-AGE NUMBER(2) CHECK (AGE >= 18)
-```
-
----
-
-# 🧠 SQL Execution Order
-
-```sql
+```text
 SELECT
 FROM
 WHERE
 GROUP BY
 HAVING
-ORDER BY;
+ORDER BY
 ```
-
----
-
-# ✅ SQL Commands Covered
-
-## DDL
-- CREATE
-- ALTER
-- DROP
-- TRUNCATE
-- DESC
-
-## DML
-- INSERT
-- UPDATE
-- DELETE
-- SELECT
-
-## Clauses
-- WHERE
-- DISTINCT
-- BETWEEN
-- LIKE
-- ORDER BY
-- AS
-
-## Aggregate Functions
-- COUNT()
-- SUM()
-- AVG()
-- MAX()
-- MIN()
-
-## Grouping
-- GROUP BY
-- HAVING
-
-## Set Operations
-- UNION
-- UNION ALL
-- INTERSECT
-- MINUS (Oracle SQL)
