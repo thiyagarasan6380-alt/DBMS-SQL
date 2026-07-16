@@ -1,19 +1,19 @@
-# 📘 DBMS & SQL Learning Journey
+# 📘 DBMS & SQL Learning Repository
 
 ## 🚀 About
 
-This repository documents my learning journey in **Database Management Systems (DBMS)** and **SQL**. It contains theory notes, SQL syntax, relational algebra, joins, views, and practice queries completed during my college coursework.
+This repository documents my complete learning journey in **Database Management Systems (DBMS)** and **SQL**. It includes theory notes, SQL syntax, Oracle SQL practice programs, relational algebra, joins, views, constraints, and query-solving exercises.
 
-The purpose of this repository is to strengthen my database knowledge, improve SQL problem-solving skills, and prepare for university exams, internships, and technical interviews.
+The goal of this repository is to build a strong foundation in databases and SQL while preparing for university examinations, internships, and software development.
 
 ---
 
 # 📚 Topics Covered
 
-## 📖 DBMS Fundamentals
+## 📖 Database Fundamentals
 - Introduction to DBMS
 - Advantages of DBMS
-- Database Architecture (Three-Level Architecture)
+- Database Architecture
 - Data Independence
 - Schema
 - Instance
@@ -31,7 +31,7 @@ The purpose of this repository is to strengthen my database knowledge, improve S
 
 ---
 
-## 🛡️ Constraints
+## 🛡️ Integrity Constraints
 - PRIMARY KEY
 - FOREIGN KEY
 - NOT NULL
@@ -52,18 +52,16 @@ The purpose of this repository is to strengthen my database knowledge, improve S
 
 ---
 
-# 💻 SQL (Oracle SQL / MySQL)
+# 💻 SQL
 
-## DDL (Data Definition Language)
+## DDL Commands
 - CREATE
 - ALTER
 - DROP
 - TRUNCATE
 - DESC
 
----
-
-## DML (Data Manipulation Language)
+## DML Commands
 - INSERT
 - UPDATE
 - DELETE
@@ -123,33 +121,72 @@ The purpose of this repository is to strengthen my database knowledge, improve S
 
 - Creating Tables
 - Modifying Tables
-- Adding Constraints
+- Deleting Tables
 - Inserting Records
 - Updating Records
 - Deleting Records
 - Retrieving Data
-- Filtering Data
-- Sorting Records
+- Sorting Data
+- Filtering Records
 - Pattern Matching
 - Aggregate Queries
 - Grouping Data
 - Joining Multiple Tables
 - Creating Views
+- Applying Constraints
 
 ---
 
-# 💡 SQL Concepts Learned
+# 🧠 SQL Concepts Learned
 
-- Difference between DDL and DML
-- Keys and Constraints
-- SQL Query Execution Order
-- Relational Algebra Operations
+- Database Design Basics
+- Relational Model
+- Relational Algebra
+- SQL Query Execution
 - Aggregate Functions
 - GROUP BY vs HAVING
 - Set Operations
-- Table Relationships
 - Different Types of SQL Joins
-- Virtual Tables (Views)
+- Data Integrity
+- Views
+- Query Optimization Basics
+
+---
+
+# 📝 SQL Query Syntax Covered
+
+- CREATE TABLE
+- ALTER TABLE
+- DROP TABLE
+- TRUNCATE TABLE
+- DESC
+- INSERT INTO
+- UPDATE
+- DELETE
+- SELECT
+- WHERE
+- DISTINCT
+- ORDER BY
+- BETWEEN
+- LIKE
+- AS
+- COUNT()
+- SUM()
+- AVG()
+- MAX()
+- MIN()
+- GROUP BY
+- HAVING
+- NATURAL JOIN
+- INNER JOIN
+- LEFT JOIN
+- RIGHT JOIN
+- FULL OUTER JOIN
+- UNION
+- UNION ALL
+- INTERSECT
+- MINUS
+- CREATE VIEW
 
 ---
 
@@ -157,71 +194,72 @@ The purpose of this repository is to strengthen my database knowledge, improve S
 
 - Oracle SQL Plus
 - Oracle Database
-- MySQL (Learning)
+- MySQL
 - Online SQL Compiler
 
 ---
 
-# 📂 Repository Structure
+# 📁 Repository Structure
 
 ```
 DBMS-SQL/
 │
 ├── Notes/
+├── SQL Syntax/
 ├── SQL Programs/
 ├── Practice Questions/
-├── Lab Exercises/
 ├── Relational Algebra/
 ├── Join Examples/
-├── SQL Cheat Sheet/
+├── Views/
+├── Constraints/
 └── README.md
 ```
 
 ---
 
-# 📈 Learning Progress
+# 🎯 Learning Goals
 
-## ✅ Completed
-
-- DBMS Fundamentals
-- Relational Model
-- Database Keys
-- Constraints
-- Relational Algebra
-- SQL DDL Commands
-- SQL DML Commands
-- SQL Clauses
-- Aggregate Functions
-- GROUP BY
-- HAVING
-- Set Operations
-- SQL Joins
-- SQL Views
+- Master SQL Fundamentals
+- Understand Relational Databases
+- Write Efficient SQL Queries
+- Learn Database Design
+- Prepare for Placement Interviews
+- Build Full-Stack Applications with SQL Databases
 
 ---
 
-## 🎯 Upcoming Topics
+# 🚀 Upcoming Topics
 
 - Nested Queries (Subqueries)
 - Correlated Subqueries
-- Views (Advanced)
-- Indexes
 - Transactions (COMMIT, ROLLBACK, SAVEPOINT)
-- Functions & Procedures
+- Indexes
+- Stored Procedures
+- Functions
 - Triggers
 - PL/SQL
-- Java JDBC with MySQL
+- JDBC (Java Database Connectivity)
 - Database Mini Projects
+- Node.js + MySQL Integration
 
 ---
 
-# 🎯 Goal
+# 📈 Progress
 
-- Build a strong foundation in DBMS.
-- Master SQL for academic and placement preparation.
-- Practice real-world database queries.
-- Learn database connectivity using Java (JDBC).
-- Develop database-driven applications.
+- ✅ DBMS Fundamentals
+- ✅ Relational Model
+- ✅ Keys
+- ✅ Constraints
+- ✅ Relational Algebra
+- ✅ SQL DDL
+- ✅ SQL DML
+- ✅ SQL Clauses
+- ✅ Aggregate Functions
+- ✅ GROUP BY
+- ✅ HAVING
+- ✅ Set Operations
+- ✅ SQL Joins
+- ✅ Views
 
 ---
 
@@ -231,4 +269,4 @@ DBMS-SQL/
 
 Computer Science Engineering Student
 
-*"Learning one query at a time, building a strong database foundation."* 🚀
+*"Learning databases one query at a time and building a strong foundation for full-stack development."* 🚀
