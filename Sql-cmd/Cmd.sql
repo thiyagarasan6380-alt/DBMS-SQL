@@ -1,6 +1,6 @@
-# 📘 SQL Syntax Reference
+# 📘 SQL Syntax Cheat Sheet
 
-## CREATE TABLE
+## 1. CREATE TABLE
 ```sql
 CREATE TABLE table_name (
     column1 datatype,
@@ -9,7 +9,18 @@ CREATE TABLE table_name (
 );
 ```
 
-## ALTER TABLE
+Example:
+```sql
+CREATE TABLE Employee(
+    EmpNo NUMBER(6),
+    Name VARCHAR2(30),
+    Salary NUMBER(8)
+);
+```
+
+---
+
+## 2. ALTER TABLE
 
 ### Add Column
 ```sql
@@ -29,17 +40,23 @@ ALTER TABLE table_name
 DROP COLUMN column_name;
 ```
 
-## DROP TABLE
+---
+
+## 3. DROP TABLE
 ```sql
 DROP TABLE table_name;
 ```
 
-## TRUNCATE TABLE
+---
+
+## 4. TRUNCATE TABLE
 ```sql
 TRUNCATE TABLE table_name;
 ```
 
-## DESC
+---
+
+## 5. DESC
 ```sql
 DESC table_name;
 ```
@@ -48,79 +65,119 @@ DESC table_name;
 
 # DML Commands
 
-## INSERT
+## 6. INSERT
 ```sql
 INSERT INTO table_name
 VALUES(value1, value2, value3, ...);
 ```
 
-## UPDATE
+Specific Columns
+```sql
+INSERT INTO table_name(column1, column2)
+VALUES(value1, value2);
+```
+
+---
+
+## 7. UPDATE
 ```sql
 UPDATE table_name
 SET column_name = value
 WHERE condition;
 ```
 
-## DELETE
+Update All Rows
+```sql
+UPDATE table_name
+SET column_name = value;
+```
+
+---
+
+## 8. DELETE
 ```sql
 DELETE FROM table_name
 WHERE condition;
 ```
 
-## SELECT
+Delete All Rows
+```sql
+DELETE FROM table_name;
+```
+
+---
+
+# Query Commands
+
+## 9. SELECT
 ```sql
 SELECT column1, column2
 FROM table_name;
 ```
 
+All Columns
+```sql
+SELECT *
+FROM table_name;
+```
+
 ---
 
-# SQL Clauses
+## 10. DISTINCT
+```sql
+SELECT DISTINCT column_name
+FROM table_name;
+```
 
-## WHERE
+---
+
+## 11. WHERE
 ```sql
 SELECT *
 FROM table_name
 WHERE condition;
 ```
 
-## DISTINCT
-```sql
-SELECT DISTINCT column_name
-FROM table_name;
-```
+---
 
-## ORDER BY (Ascending)
+## 12. ORDER BY
+
+Ascending
 ```sql
 SELECT *
 FROM table_name
 ORDER BY column_name;
 ```
 
-## ORDER BY (Descending)
+Descending
 ```sql
 SELECT *
 FROM table_name
 ORDER BY column_name DESC;
 ```
 
-## BETWEEN
+---
+
+## 13. BETWEEN
 ```sql
 SELECT *
 FROM table_name
-WHERE column_name BETWEEN value1 AND value2;
+WHERE column_name
+BETWEEN value1 AND value2;
 ```
 
-## LIKE
+---
 
-Starts with
+## 14. LIKE
+
+Starts With
 ```sql
 SELECT *
 FROM table_name
 WHERE column_name LIKE 'A%';
 ```
 
-Ends with
+Ends With
 ```sql
 SELECT *
 FROM table_name
@@ -141,7 +198,9 @@ FROM table_name
 WHERE column_name LIKE '_A%';
 ```
 
-## AS (Alias)
+---
+
+## 15. Alias (AS)
 ```sql
 SELECT column_name AS alias_name
 FROM table_name;
@@ -151,31 +210,39 @@ FROM table_name;
 
 # Aggregate Functions
 
-## COUNT
+## COUNT()
 ```sql
 SELECT COUNT(*)
 FROM table_name;
 ```
 
-## SUM
+---
+
+## SUM()
 ```sql
 SELECT SUM(column_name)
 FROM table_name;
 ```
 
-## AVG
+---
+
+## AVG()
 ```sql
 SELECT AVG(column_name)
 FROM table_name;
 ```
 
-## MAX
+---
+
+## MAX()
 ```sql
 SELECT MAX(column_name)
 FROM table_name;
 ```
 
-## MIN
+---
+
+## MIN()
 ```sql
 SELECT MIN(column_name)
 FROM table_name;
@@ -185,7 +252,8 @@ FROM table_name;
 
 # GROUP BY
 ```sql
-SELECT column_name, COUNT(*)
+SELECT column_name,
+       COUNT(*)
 FROM table_name
 GROUP BY column_name;
 ```
@@ -194,10 +262,11 @@ GROUP BY column_name;
 
 # HAVING
 ```sql
-SELECT column_name, COUNT(*)
+SELECT column_name,
+       COUNT(*)
 FROM table_name
 GROUP BY column_name
-HAVING COUNT(*) > 1;
+HAVING COUNT(*) > value;
 ```
 
 ---
@@ -208,34 +277,48 @@ HAVING COUNT(*) > 1;
 ```sql
 SELECT column_name
 FROM table1
+
 UNION
+
 SELECT column_name
 FROM table2;
 ```
+
+---
 
 ## UNION ALL
 ```sql
 SELECT column_name
 FROM table1
+
 UNION ALL
+
 SELECT column_name
 FROM table2;
 ```
+
+---
 
 ## INTERSECT
 ```sql
 SELECT column_name
 FROM table1
+
 INTERSECT
+
 SELECT column_name
 FROM table2;
 ```
+
+---
 
 ## MINUS (Oracle SQL)
 ```sql
 SELECT column_name
 FROM table1
+
 MINUS
+
 SELECT column_name
 FROM table2;
 ```
@@ -246,38 +329,46 @@ FROM table2;
 
 ## NATURAL JOIN
 ```sql
-SELECT column_name
+SELECT columns
 FROM table1
 NATURAL JOIN table2;
 ```
 
+---
+
 ## INNER JOIN
 ```sql
-SELECT column_name
+SELECT columns
 FROM table1
-JOIN table2
+INNER JOIN table2
 ON table1.common_column = table2.common_column;
 ```
+
+---
 
 ## LEFT OUTER JOIN
 ```sql
-SELECT column_name
+SELECT columns
 FROM table1
-LEFT JOIN table2
+LEFT OUTER JOIN table2
 ON table1.common_column = table2.common_column;
 ```
+
+---
 
 ## RIGHT OUTER JOIN
 ```sql
-SELECT column_name
+SELECT columns
 FROM table1
-RIGHT JOIN table2
+RIGHT OUTER JOIN table2
 ON table1.common_column = table2.common_column;
 ```
 
+---
+
 ## FULL OUTER JOIN
 ```sql
-SELECT column_name
+SELECT columns
 FROM table1
 FULL OUTER JOIN table2
 ON table1.common_column = table2.common_column;
@@ -285,13 +376,56 @@ ON table1.common_column = table2.common_column;
 
 ---
 
-# VIEW
+# Views
 
 ## CREATE VIEW
 ```sql
 CREATE VIEW view_name AS
-SELECT column_name
+SELECT columns
 FROM table_name;
+```
+
+---
+
+# Constraints
+
+## PRIMARY KEY
+```sql
+column_name datatype PRIMARY KEY
+```
+
+---
+
+## NOT NULL
+```sql
+column_name datatype NOT NULL
+```
+
+---
+
+## UNIQUE
+```sql
+column_name datatype UNIQUE
+```
+
+---
+
+## CHECK
+```sql
+column_name datatype CHECK(condition)
+```
+
+Example
+```sql
+AGE NUMBER(2) CHECK(AGE >= 18)
+```
+
+---
+
+## FOREIGN KEY
+```sql
+FOREIGN KEY(column_name)
+REFERENCES parent_table(parent_column);
 ```
 
 ---
